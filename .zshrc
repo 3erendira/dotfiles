@@ -103,4 +103,3 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias hyprconf="nvim ~/.config/hypr/hyprland.conf"
-. "/home/lunareonn/.deno/env"
