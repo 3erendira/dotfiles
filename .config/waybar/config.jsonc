@@ -15,7 +15,7 @@
   ],
   "modules-center": ["hyprland/workspaces", "mpris"],
   "modules-right": [
-    "custom/notifications",
+    "custom/network-load",
     "network",
     "wireplumber",
     "custom/power"
@@ -109,14 +109,10 @@
     "spacing": 10,
     "show-passive-items": true
   },
-  "custom/notifications": {
+  "custom/network-load": {
     "format": "{}",
-    "interval": 1,
-    "exec": "~/.config/waybar/scripts/notification",
-    "on-click": "~/.config/waybar/scripts/notification pop",
-    "on-click-right": "~/.config/waybar/scripts/notification close",
-    "on-click-middle": "~/.config/waybar/scripts/notification clear",
-    "tooltip": false
+    "exec": "python ~/.config/waybar/scripts/get-load.py",
+    "interval": 5
   },
   "network": {
     // "interface": "wlan0",

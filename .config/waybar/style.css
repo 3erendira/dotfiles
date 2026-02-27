@@ -30,7 +30,7 @@ tooltip {
 #workspaces,
 #mpris,
 #tray,
-#custom-notifications,
+#custom-network-load,
 #bluetooth,
 #network,
 #wireplumber,
@@ -167,7 +167,7 @@ tooltip {
   border: 2px @lavender solid;
 }
 
-#custom-notifications {
+#custom-network-load {
   border-radius: 10px;
   margin-right: 5px;
   margin-left: 5px;
