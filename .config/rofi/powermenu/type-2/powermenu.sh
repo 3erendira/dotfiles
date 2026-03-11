@@ -53,10 +53,14 @@ run_cmd() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
-			rm -r /home/lunareonn/.confg/obs-studio/.sentinel
+			python /home/lunareonn/.config/hypr/scripts/stop-replay-buffer.py
+			systemctl --user stop syncthing.service
+			wait 2
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
-			rm -r /home/lunareonn/.config/obs-studio/.sentinel
+			python /home/lunareonn/.config/hypr/scripts/stop-replay-buffer.py
+			systemctl --user stop syncthing.service
+			wait 2
 			systemctl reboot
 		elif [[ $1 == '--suspend' ]]; then
 			mpc -q pause
@@ -74,7 +78,8 @@ run_cmd() {
 			elif [[ "$DESKTOP_SESSION" == "xfce" ]]; then
 				killall xfce4-session
 			elif [[ "$DESKTOP_SESSION" == "hyprland" ]]; then
-				rm -r /home/lunareonn/.config/obs-studio/.sentinel
+				python /home/lunareonn/.config/hypr/scripts/stop-replay-buffer.py
+				wait 2
 				killall Hyprland
 			fi
 		fi
